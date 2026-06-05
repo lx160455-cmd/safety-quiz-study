@@ -7,13 +7,13 @@
   "theme_color": "#176b87",
   "icons": [
     {
-      "src": "./assets/app-icon-180.png",
+      "src": "./assets/app-icon-helmet-180.png",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "./assets/app-icon-512.png",
+      "src": "./assets/app-icon-helmet-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
