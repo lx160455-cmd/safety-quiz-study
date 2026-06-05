@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>安规背题助手</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">安</div>
+          <div>
+            <h1>安规背题助手</h1>
+            <p id="bankMeta">正在加载题库...</p>
+          </div>
+        </div>
+
+        <section class="panel">
+          <label for="searchInput">搜索</label>
+          <input id="searchInput" type="search" placeholder="题干、答案、纲要" />
+
+          <label for="outlineFilter">一级纲要</label>
+          <select id="outlineFilter"></select>
+
+          <label for="typeFilter">题型</label>
+          <select id="typeFilter"></select>
+
+          <label for="modeSelect">刷题模式</label>
+          <select id="modeSelect">
+            <option value="all">全部题目</option>
+            <option value="wrong">只看错题</option>
+            <option value="favorite">收藏题目</option>
+            <option value="due">今日复习</option>
+          </select>
+
+          <div class="switch-row">
+            <span>随机顺序</span>
+            <button id="shuffleToggle" class="toggle" type="button" aria-pressed="false">
+              <span></span>
+            </button>
+          </div>
+        </section>
+
+        <section class="stats-grid">
+          <div>
+            <strong id="todayCount">0</strong>
+            <span>今日</span>
+          </div>
+          <div>
+            <strong id="accuracy">0%</strong>
+            <span>正确率</span>
+          </div>
+          <div>
+            <strong id="wrongCount">0</strong>
+            <span>错题</span>
+          </div>
+          <div>
+            <strong id="masteredCount">0</strong>
+            <span>掌握</span>
+          </div>
+        </section>
+
+        <button id="resetProgress" class="ghost-button" type="button">清空学习记录</button>
+      </aside>
+
+      <section class="study-area">
+        <header class="study-header">
+          <div>
+            <p id="questionIndex">第 0 / 0 题</p>
+            <h2 id="questionTitle">准备开始</h2>
+          </div>
+          <button id="favoriteButton" class="icon-button" type="button" title="收藏">☆</button>
+        </header>
+
+        <article class="question-card">
+          <div class="tag-row" id="tagRow"></div>
+          <div id="questionStem" class="stem"></div>
+          <div id="optionsBox" class="options"></div>
+          <textarea id="shortAnswerInput" class="short-answer" placeholder="可以先在这里默写答案，再点“看答案”核对"></textarea>
+
+          <div id="resultBox" class="result hidden"></div>
+
+          <footer class="actions">
+            <button id="prevButton" class="secondary" type="button">上一题</button>
+            <button id="showAnswerButton" class="secondary" type="button">看答案</button>
+            <button id="submitButton" class="primary" type="button">提交答案</button>
+            <button id="nextButton" class="primary" type="button">下一题</button>
+          </footer>
+
+          <div id="selfCheck" class="self-check hidden">
+            <button id="selfWrong" class="secondary danger" type="button">还没掌握</button>
+            <button id="selfRight" class="primary" type="button">已答对</button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="./data/questions.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
